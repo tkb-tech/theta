@@ -63,20 +63,30 @@ for i in range(len(comp)):
     print("入力値は"+str(x))
     value.append(x)
 
+flag = 0
+cnt = len(value) - 1
+while flag == 0:
+    if value[cnt] != "null":
+        flag = 810
+    else:
+        cnt = cnt - 1
+
+print(cnt)
+
 print("--------------------------------------------")
 
-for i in range(len(comp)-1):
+for i in range(cnt):
     if value[i] != "null":
         if unit[i] != "null":
             sys.stdout.write(comp[i]+" "+value[i]+" "+unit[i]+", ")
         else:
             sys.stdout.write(comp[i]+" "+value[i]+", ")
 
-if value[len(comp)-1] != "null":
-    if unit[len(comp)-1] != "null":
-        print(comp[len(comp)-1]+" "+value[len(comp)-1]+" "+unit[len(comp)-1])
+if value[cnt] != "null":
+    if unit[cnt] != "null":
+        print(comp[cnt]+" "+value[cnt]+" "+unit[cnt])
     else:
-        print(comp[len(comp)-1]+" "+value[len(comp)-1])
+        print(comp[cnt]+" "+value[cnt])
 
 print("--------------------------------------------")
 
