@@ -131,7 +131,11 @@ value = []
 for i in range(len(comp)):
     print(comp[i])
     x = raw_input()
-    value.append(x)
+    if len(x) == 0:
+        value.append("null")
+    else:
+        value.append(x)
+    #value.append(x)
 
 flag = 0
 cnt = len(value) - 1
