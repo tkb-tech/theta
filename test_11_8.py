@@ -1,28 +1,127 @@
 # coding: utf-8
-import sys, codecs
+import sys
 
-comp = ["総蛋白",
+comp = [
+"総蛋白",
 "アルブミン",
 "CK",
 "AST",
 "ALT",
-"γ-GTP",
 "LD",
 "ALP",
+"γ-GTP",
 "CRP",
 "Cre",
+"尿酸",
 "BUN",
+"血清血糖",
+"中性脂肪",
+"T-chol",
+"HDL-chol",
+"LDL-chol",
 "Na",
 "K",
 "Cl",
 "Ca",
+"P",
+"T-bil",
+"D-bil",
 "BNP",
+"HbA1c",
+"グリコアルブミン",
 "WBC",
+"RBC",
 "Hb",
+"Ht",
 "Plt",
+"MCV",
+"MCHC",
+"好塩基球",
+"好酸球",
+"好中球",
+"桿状",
+"分葉",
+"新FDP定量",
 "D-dimer",
 "PT-INR",
-"APTT-time"] #component
+"APTT-time",
+"フィブリノゲン",
+"アンチトロンビンⅢ",
+"HBsAg（定量）",
+"HCVAb(Index)",
+"RPR定性（LA法）",
+"梅毒TP定性",
+"ケトン体",
+"潜血",
+"ウロビリノゲン",
+"白血球",
+"亜硝酸塩",
+"赤血球",
+"白血球",
+"偏平上皮細胞",
+"eGFR"
+] #component
+
+"""
+総蛋白
+アルブミン
+CK
+AST
+ALT
+LD
+ALP
+γ-GTP
+CRP
+Cre
+尿酸
+BUN
+血清血糖
+中性脂肪
+T-chol
+HDL-chol
+LDL-chol
+Na
+K
+Cl
+Ca
+P
+T-bil
+D-bil
+BNP
+HbA1c
+グリコアルブミン
+WBC
+RBC
+Hb
+Ht
+Plt
+MCV
+MCHC
+好塩基球
+好酸球
+好中球
+桿状
+分葉
+新FDP定量
+D-dimer
+PT-INR
+APTT-time
+フィブリノゲン
+アンチトロンビンⅢ
+HBsAg（定量）
+HCVAb(Index)
+RPR定性（LA法）
+梅毒TP定性
+ケトン体
+潜血
+ウロビリノゲン
+白血球
+亜硝酸塩
+赤血球
+白血球
+偏平上皮細胞
+eGFR
+"""
 
 unit = [
 "g/dL",
@@ -30,37 +129,128 @@ unit = [
 "IU/L",
 "IU/L",
 "IU/L",
-"IU/L",
 "U/L",
 "mg/dL",
+"IU/L",
+"mg/dL",
+"mg/dL",
+"mg/dL",
+"mg/dL",
+"mg/dL",
+"mg/dL",
 "mg/dL",
 "mg/dL",
 "mg/dL",
 "mEq/L",
 "mEq/L",
 "mEq/L",
+"mg/dL",
+"mg/dL",
+"mg/dL",
 "mg/dL",
 "pg/mL",
+"%",
+"%",
 "×10^2 /μL",
+"×10^4/μL",
 "g/dL",
+"%",
 "×10^4 /μL",
+"fl",
+"%",
+"%",
+"%",
+"%",
+"%",
+"μ g/mL",
+"μ g/mL",
 "μ g/mL",
 "null",
-"sec"
+"sec",
+"mg/dL",
+"%",
+"IU/mL",
+"S/CO",
+"R.U.",
+"T.U.",
+"null",
+"null",
+"null",
+"null",
+"null",
+"/HPF",
+"/HPF",
+"/HPF",
+"ml/min"
 ]
+"""
+g/dL
+g/dL
+IU/L
+IU/L
+IU/L
+U/L
+mg/dL
+IU/L
+mg/dL
+mg/dL
+mg/dL
+mg/dL
+mg/dL
+mg/dL
+mg/dL
+mg/dL
+mg/dL
+mEq/L
+mEq/L
+mEq/L
+mg/dL
+mg/dL
+mg/dL
+mg/dL
+pg/mL
+%
+%
+×10^2 /μL
+×10^4/μL
+g/dL
+%
+×10^4 /μL
+fl
+%
+%
+%
+%
+%
+μ g/mL
+μ g/mL
+μ g/mL
 
+sec
+mg/dL
+%
+IU/mL
+S/CO
+R.U.
+T.U.
+
+
+
+
+
+/HPF
+/HPF
+/HPF
+ml/min
+"""
 print(len(comp))
 print(len(unit))
 
 value = []
 
-
-print('こんにちわ！')
-
 for i in range(len(comp)):
-    print(comp[i]+'のデータを入力してくださいネ')
+    print(comp[i])
     x = raw_input()
-    print("入力値は"+str(x))
     value.append(x)
 
 flag = 0
@@ -71,9 +261,9 @@ while flag == 0:
     else:
         cnt = cnt - 1
 
-print(cnt)
+print("値がnullでない最後の成分は"+comp[cnt])
 
-print("--------------------------------------------")
+print("-------------------------------------------------------")
 
 for i in range(cnt):
     if value[i] != "null":
@@ -88,5 +278,5 @@ if value[cnt] != "null":
     else:
         print(comp[cnt]+" "+value[cnt])
 
-print("--------------------------------------------")
+print("-------------------------------------------------------")
 
